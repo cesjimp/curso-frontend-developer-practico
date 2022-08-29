@@ -7,6 +7,8 @@ const contCarritoCompras=document.querySelector(".product-detail")
 const contenedorProductos=document.getElementById("contenedor_productos")
 const cuadroDescripcion = document.querySelector(".product-detail2")
 const productDescriptionMenu=document.querySelector(".product-detail2")
+const productDescriptionMenuClose=document.querySelector(".product-detail2-close")
+
 let productosEnPantalla;
 arrayBotones=[]
 
@@ -26,8 +28,13 @@ let productDetail=document.querySelector(".product-detail2")
 naveEmailOver.addEventListener("click", clickMenuDesktop)
 menuMobile.addEventListener("click", clickMenuMobile)
 btnShoping.addEventListener("click", cickCarritoCompras)
+productDescriptionMenuClose.addEventListener("click", closeDescription)
 
 
+function closeDescription ()
+{
+    productDescriptionMenu.classList.add("inactive")
+}
 
 
 
@@ -57,12 +64,13 @@ function clickMenuDesktop()
 function clickMenuMobile()
 {
     
-    if (iscontCarritoComprasClosed &&   ismobileMenuClosed){
+    if (iscontCarritoComprasClosed && ismobileMenuClosed && isProductDescriptionClosed){
         mobileMenu.classList.toggle("inactive");  
     }
-    else if (!iscontCarritoComprasClosed)
+    else if (!iscontCarritoComprasClosed ||!isProductDescriptionClosed)
     {
         contCarritoCompras.classList.add("inactive")
+        productDescriptionMenu.classList.add("inactive")
         mobileMenu.classList.toggle("inactive");  
     }
     else
@@ -94,6 +102,23 @@ function cickCarritoCompras()
     }  
     guardarVariables()
 }
+
+function opDescription ()
+{
+      
+    if (!iscontCarritoComprasClosed || !isMenuDesktopClosed)
+    {
+        contCarritoCompras.classList.add("inactive");
+        desktopMenu.classList.add("inactive")
+        productDetail.classList.toggle("inactive")
+    }
+    else
+    {
+        productDetail.classList.toggle("inactive")
+    }  
+    guardarVariables()
+}
+
 
 function guardarVariables()
 
@@ -196,30 +221,15 @@ product_card5.addEventListener("click",opDescription)
 
 
 
-productosEnPantalla= document.getElementsByClassName("product-card");
+// productosEnPantalla= document.getElementsByClassName("product-card");
 
 
 
-function seleccionarItem()
-{
-        console.log (productoSeleccionado)
-}
+// function seleccionarItem()
+// {
+//         console.log (productoSeleccionado)
+// }
 
-function opDescription ()
-{
-      
-    if (!iscontCarritoComprasClosed || !isMenuDesktopClosed)
-    {
-        contCarritoCompras.classList.add("inactive");
-        desktopMenu.classList.add("inactive")
-        productDetail.classList.toggle("inactive")
-    }
-    else
-    {
-        productDetail.classList.toggle("inactive")
-    }  
-    guardarVariables()
-}
 
 
 
