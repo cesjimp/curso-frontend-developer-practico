@@ -12,8 +12,6 @@ let arrayListaProductos=[]
 let productoEnLista;
 
 
-
-
 naveEmailOver.addEventListener("click", clickMenuDesktop)
 menuMobile.addEventListener("click", clickMenuMobile)
 btnShoping.addEventListener("click", cickCarritoCompras)
@@ -78,9 +76,6 @@ function cickCarritoCompras()
         contCarritoCompras.classList.toggle("inactive");
     }  
     guardarVariables()
-
-
-
 }
 
 function guardarVariables()
@@ -104,12 +99,12 @@ class productlist
 
 }
 
-let bike = new productlist ("Bike",120, "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?cs=srgb&dl=pexels-pixabay-276517.jpg&fm=jpg")
-let televisor = new productlist ("TV",250, "https://images.pexels.com/photos/5721814/pexels-photo-5721814.jpeg")
-let celular = new productlist ("Mobile Phone",420, "https://images.pexels.com/photos/12339129/pexels-photo-12339129.jpeg")
-let bike2 = new productlist ("Bike",190, "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg")
-let televisor2 = new productlist ("TV",320, "https://images.pexels.com/photos/7546602/pexels-photo-7546602.jpeg")
-let celular2 = new productlist ("Mobile Phone",490, "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg")
+let bike = new productlist ("Bike",120, src="./img/Bici1.jpg")
+let televisor = new productlist ("TV",250, src="./img/Screen1.jpg")
+let celular = new productlist ("Mobile Phone",420, src="./img/Mobile1.jpg")
+let bike2 = new productlist ("Bike",190, src="./img/Bici2.jpg")
+let televisor2 = new productlist ("TV",320, src="./img/Screen2.jpg")
+let celular2 = new productlist ("Mobile Phone",490, src="./img/Mobile2.jpg")
 
 
 
